@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proj2_bmi/model/bmiModel.dart';
+import 'package:proj2_bmi/provider/db_provider.dart';
 import 'package:provider/provider.dart';
 
 class HistoryWidget extends StatelessWidget {
@@ -9,7 +11,7 @@ class HistoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(builder: (context, provider, x) {
+    return Consumer(builder: (context,DbProvider provider, x) {
       return Card(
         elevation: 8,
         child: Padding(
@@ -17,32 +19,55 @@ class HistoryWidget extends StatelessWidget {
           child: Row(
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Text("${bmiModel.height!} cm"),
-                  // Text("${bmiModel.weight!} kg"),
-                  // Text(bmiModel.bmiStatus!),
-                  // Text("${bmiModel.bmiScore!}"),
 
                   Row(
                     children: [
-                      CircleAvatar(
-                        backgroundColor: bmiModel.bmiColor! as Color,
-                        radius: 7,
-                      ),
-                      SizedBox(
-                        width: 3,
-                      ),
-                      Text(bmiModel.bmiStatus!),
-                      Text("${bmiModel.bmiScore!}"),
+                      // CircleAvatar(
+                      //   backgroundColor: bmiModel.bmiColor! as Color,
+                      //   radius: 7,
+                      // ),
+
+                      Text(bmiModel.bmiStatus!,style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontFamily: 'Gabriela-Regular',
+                      ),),
+                      SizedBox(width: 10,),
+                      Text("${bmiModel.bmiScore!}",style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontFamily: 'Gabriela-Regular',
+                      ),),
                     ],
                   ),
                   Row(children: [
-                    Text("${bmiModel.height!} cm"),
-                    Text("${bmiModel.weight!} kg"),
+                    Text("${bmiModel.height!} cm",style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Gabriela-Regular',
+                    ),),
+                    SizedBox(width: 10,),
+                    Text("${bmiModel.weight!} kg",style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Gabriela-Regular',
+                    ),),
                   ],),
                 ],
               ),
-             Text("${bmiModel.bmiDate!} cm"),
+             //Text("${bmiModel.bmiDate!} cm"),
+              Spacer(),
+            IconButton(
+            onPressed: () {
+              provider.deleteHistory(bmiModel);
+      },
+          icon: Icon(Icons.delete)),
             ],
           ),
         ),

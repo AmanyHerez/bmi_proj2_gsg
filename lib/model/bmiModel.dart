@@ -5,16 +5,16 @@ class BmiModel {
   String? height;
   String? weight;
   String? bmiStatus;
-  String? bmiColor;
-  String? bmiDate;
+  // String? bmiColor;
+  // String? bmiDate;
   int? bmiScore;
   BmiModel({
     required this.height,
     required this.weight,
     required this.bmiStatus,
     required this.bmiScore,
-    required this.bmiColor,
-    required this. bmiDate,
+    // required this.bmiColor,
+    // required this. bmiDate,
   });
 
   BmiModel.fromMap(Map<String, dynamic> map) {
@@ -24,8 +24,8 @@ class BmiModel {
     bmiStatus = map[DbHelper.userBmiStatusColumName];
     bmiScore = map[DbHelper.userBmiScoreColumName];
 
-    bmiColor = map[DbHelper.userBmiColorColumName];
-    bmiDate = map[DbHelper.userBmiDateColumName];
+    // bmiColor = map[DbHelper.userBmiColorColumName];
+    // bmiDate = map[DbHelper.userBmiDateColumName];
 
   }
 
@@ -35,9 +35,9 @@ class BmiModel {
       DbHelper.userWeightColumName: weight,
       DbHelper.userBmiStatusColumName:bmiStatus,
       DbHelper.userBmiScoreColumName:  bmiScore,
-
-      DbHelper.userBmiColorColumName:bmiColor,
-      DbHelper.userBmiDateColumName:  bmiDate,
+      //
+      // DbHelper.userBmiColorColumName:bmiColor,
+      // DbHelper.userBmiDateColumName:  bmiDate,
     };
 
 

@@ -239,7 +239,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                               bmiScore: bmiScore,
                                               height: heightController.text,
                                               weight: weightController.text,
-                                              date: dateController.text,
+                                              //date: dateController.text,
 
 
                                             )));

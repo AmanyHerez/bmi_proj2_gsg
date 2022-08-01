@@ -39,8 +39,7 @@ class DbHelper {
     $userWeightColumName TEXT,
     $userBmiStatusColumName TEXT,
     $userBmiScoreColumName INTEGER,
-    $userBmiColorColumName TEXT,
-    $userBmiDateColumName TEXT,
+   
     )
 ''');
     },
@@ -55,6 +54,7 @@ class DbHelper {
   insertNewBmi(BmiModel bmiModel) async {
     int rowIndex = await database!.insert(tableName, bmiModel.toMap());
     log(rowIndex.toString());
+
   }
 
   Future<List<BmiModel>> selectAllHistory() async {
@@ -63,12 +63,13 @@ class DbHelper {
     rowsAsMaps.map((e) => BmiModel.fromMap(e)).toList();
     return bmis;
   }
-
-
   updateOneTask(BmiModel bmiModel) async {
     int count = await database!.update(tableName, bmiModel.toMap(),
         where: '$userIdColumName=?', whereArgs: [bmiModel.id]);
     log(count.toString());
+  }
+  deleteOneHistory(int id) async  {
+    await database!.delete(tableName, where: '$userIdColumName=?', whereArgs: [id]);
   }
 
 }

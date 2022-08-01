@@ -26,14 +26,14 @@ class DbProvider extends ChangeNotifier {
   selectAllHistory() async {
     List<BmiModel> bmis = await DbHelper.dbHelper.selectAllHistory();
    fillLists(bmis);
-   // selectAllHistory();
+
   }
 
-  // deleteTask(TaskModel taskModel) async {
-  //   await DbHelper.dbHelper.deleteOneTask(taskModel.id!);
-  //   selectAllTasks();
-  // }
-  //
+  deleteHistory(BmiModel bmiModel) async {
+    await DbHelper.dbHelper.deleteOneHistory(bmiModel.id!);
+    selectAllHistory();
+  }
+
   updateTask(BmiModel bmiModel) async {
 
     //await DbHelper.dbHelper.updateOneTask(taskModel);

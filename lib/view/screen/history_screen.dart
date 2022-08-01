@@ -22,6 +22,7 @@ class HistoryScreen extends StatelessWidget {
             builder: (context, DbProvider value, child) {
               return Consumer<DbProvider>(builder: (context, provider, x) {
                 return ListView.builder(
+                  reverse: true,
                     itemCount: provider.allHsitory.length,
                     itemBuilder: (context, index) {
                       return HistoryWidget(provider.allHsitory[index]);

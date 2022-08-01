@@ -9,16 +9,16 @@ import '../../provider/db_provider.dart';
 class ScoreScreen extends StatefulWidget {
   final int bmiScore;
   String height;
-  String? date;
+  //String? date;
   String weight;
-  String? color;
+  //String? color;
 
   ScoreScreen({
     required this.bmiScore,
     required this.height,
     required this.weight,
-    required this.date,
-    this.color,
+   // required this.date,
+    //this.color,
   });
 
   @override
@@ -119,11 +119,12 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       weight: widget.weight,
                       bmiStatus: bmiStatus,
                       bmiScore: widget.bmiScore,
-                      bmiColor: widget.color,
-                      bmiDate: widget.date);
+                      // bmiColor: widget.color,
+                      // bmiDate: widget.date,
+                  );
                   await Provider.of<DbProvider>(context, listen: false)
                       .createNewHistory(bmiModel);
-                  Navigator.pushNamed(context, '/history_screen');
+                  Navigator.pushReplacementNamed(context, '/history_screen');
                 },
                 child: Text(
                   "save".tr(),
