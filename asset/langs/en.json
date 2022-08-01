@@ -1,0 +1,25 @@
+{"bmi_calculator": "BMI Calculator",
+  "height": "Height:",
+  "height_cm": "Height In CM",
+  "Weight": "Weight:",
+  "Weight_kg": "Weight In kg",
+  "Date": "Date:",
+  "Calculate": "Calculate",
+  "Re_Calculate": "Re-Calculate",
+  "Normal": "Normal",
+  "Overweight": "Overweight",
+  "Obese": "Obese",
+  "Underweight": "Underweight",
+  "your-score": "Your Score",
+  "Msg_Normal": "congratulations\n You are in a great place now. Maintain healthy habits to maintain a healthy weight",
+  "Msg_Overweight": "Don't look over it! It's time to take action to reach your target weight",
+  "Msg_Obese": "It's time for change! You are at high risk for obesity-related diseases You should increase your physical activity and reduce calories slowly but surely",
+  "Msg_Underweight": "You may need to consider ways to gain weight because your current weight may pose certain health risks.",
+  "No_Result": "No Result",
+  "next": "Next",
+  "save": "Save",
+  "history": "History"
+
+
+
+}
