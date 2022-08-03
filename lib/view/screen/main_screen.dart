@@ -30,6 +30,7 @@ class _MainScreenState extends State<MainScreen> {
         showUnselectedLabels: true,
         mouseCursor: MouseCursor.defer,
         type: BottomNavigationBarType.fixed,
+        backgroundColor: Color(0xFFA557FF),
         onTap: (int value) {
           setState(() {
             _currentIndex = value;
@@ -37,7 +38,8 @@ class _MainScreenState extends State<MainScreen> {
 
         },
         currentIndex: _currentIndex,
-        selectedItemColor:  Colors.orange,
+        selectedItemColor:  Colors.white,
+        selectedFontSize: 15,
         iconSize: 30,
         items: [
           BottomNavigationBarItem(

@@ -1,16 +1,13 @@
 import 'dart:developer';
-
 import 'package:proj2_bmi/model/bmiModel.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-
 
 class DbHelper {
   static DbHelper dbHelper = DbHelper();
   DbHelper() {
     initDatabase();
   }
-
   static const String tableName = 'bmi_table';
   static const String userIdColumName = 'id';
   static const String userHeightColumName = 'height';
@@ -23,7 +20,6 @@ class DbHelper {
   initDatabase() async {
     database = await createConnectionWithDatabase();
   }
-
   Future<Database> createConnectionWithDatabase() async {
     String databasePath = await getDatabasesPath();
     String databaseName = 'bmis.db';
@@ -38,16 +34,10 @@ class DbHelper {
    $userHeightColumName TEXT,
     $userWeightColumName TEXT,
     $userBmiStatusColumName TEXT,
-    $userBmiScoreColumName INTEGER,
-   
+    $userBmiScoreColumName INTEGER
     )
 ''');
     },
-    //     onOpen: (db) async {
-    //   final tables =
-    //   await db.rawQuery('SELECT name FROM sqlite_master ORDER BY name;');
-    //   log(tables.toString());
-    // }
     );
     return database;
   }
@@ -71,5 +61,4 @@ class DbHelper {
   deleteOneHistory(int id) async  {
     await database!.delete(tableName, where: '$userIdColumName=?', whereArgs: [id]);
   }
-
 }

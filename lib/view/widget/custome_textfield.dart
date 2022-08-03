@@ -23,6 +23,13 @@ class CustomeTextField extends StatelessWidget {
       validator: (value) => validator(value),
       onTap:() => onTap ,
       decoration: InputDecoration(
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+          borderSide:BorderSide(
+            color: Color(0xFFA557FF),
+
+          ),
+        ),
           contentPadding: EdgeInsets.all(15),
           hintText: '$title',
           hintStyle: TextStyle(

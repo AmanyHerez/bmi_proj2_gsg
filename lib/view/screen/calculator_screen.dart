@@ -162,6 +162,13 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                           TextField(
                             controller: dateController,
                             decoration: InputDecoration(
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                  borderSide:BorderSide(
+                                    color: Color(0xFFA557FF),
+
+                                  ),
+                                ),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
                                 ),
@@ -169,9 +176,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   fontSize: 14,
                                   fontFamily: 'Gabriela-Regular',
                                 ),
-                                hintText: "Enter Date"),
+                                hintText: "date".tr()),
                             readOnly: true,
-                            //set it true, so that user will not able to edit text
+
                             onTap: () async {
                               DateTime? pickedDate;
                               pickedDate = await showDatePicker(
