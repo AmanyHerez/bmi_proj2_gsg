@@ -26,6 +26,7 @@ class DbProvider extends ChangeNotifier {
   selectAllHistory() async {
     List<BmiModel> bmis = await DbHelper.dbHelper.selectAllHistory();
    fillLists(bmis);
+   bmis.forEach((element) {print(element.toMap());});
 
   }
 

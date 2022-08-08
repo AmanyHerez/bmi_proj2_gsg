@@ -22,23 +22,23 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   GlobalKey<FormState> bmikey = GlobalKey();
 
-  validationHeight(value) {
+  validationHeight(String value) {
     if (value.isEmpty) {
       return 'please enter your height';
     }
-    // if(value< 0){
-    //   return  int.parse('your height must be positive mumber');
-    //   //'your height must be positive mumber'
-    // }
+    if(int.parse(value)< 0){
+      return  'your height must be positive mumber';
+
+    }
   }
 
-  validationWeight(value) {
+  validationWeight(String value) {
     if (value.isEmpty) {
       return 'please enter your Weight';
     }
-    // else if(value< 0){
-    //   return 'your height must be positive mumber';
-    // }
+    else if(int.parse(value)< 0){
+      return 'your height must be positive mumber';
+    }
   }
 
   CalculateBMI() {
@@ -246,7 +246,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                               bmiScore: bmiScore,
                                               height: heightController.text,
                                               weight: weightController.text,
-                                              //date: dateController.text,
+                                              date: dateController.text,
 
 
                                             )));

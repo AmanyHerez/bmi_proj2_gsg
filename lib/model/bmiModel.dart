@@ -5,16 +5,17 @@ class BmiModel {
   String? height;
   String? weight;
   String? bmiStatus;
-  // String? bmiColor;
-  // String? bmiDate;
+  String? bmiDate;
   int? bmiScore;
+  // String? bmiColor;
+
   BmiModel({
     required this.height,
     required this.weight,
     required this.bmiStatus,
     required this.bmiScore,
+    required this.bmiDate,
     // required this.bmiColor,
-    // required this. bmiDate,
   });
 
   BmiModel.fromMap(Map<String, dynamic> map) {
@@ -23,31 +24,20 @@ class BmiModel {
     weight = map[DbHelper.userWeightColumName];
     bmiStatus = map[DbHelper.userBmiStatusColumName];
     bmiScore = map[DbHelper.userBmiScoreColumName];
-
+    bmiDate = map[DbHelper.userBmiDateColumName];
     // bmiColor = map[DbHelper.userBmiColorColumName];
-    // bmiDate = map[DbHelper.userBmiDateColumName];
-
   }
 
   Map<String, dynamic> toMap() {
     return {
       DbHelper.userHeightColumName: height,
       DbHelper.userWeightColumName: weight,
-      DbHelper.userBmiStatusColumName:bmiStatus,
-      DbHelper.userBmiScoreColumName:  bmiScore,
+      DbHelper.userBmiStatusColumName: bmiStatus,
+      DbHelper.userBmiScoreColumName: bmiScore,
+      DbHelper.userBmiDateColumName:  bmiDate,
       //
       // DbHelper.userBmiColorColumName:bmiColor,
-      // DbHelper.userBmiDateColumName:  bmiDate,
     };
-
-
   }
-  // Map<String,dynamic> toMap(){
-  //   Map<String,dynamic> map=Map<String,dynamic>();
-  //   map[DbHelper.userHeightColumName]= height;
-  //   map[DbHelper.userWeightColumName]=weight;
-  //   map[DbHelper.userBmiStatusColumName]=    bmiStatus;
-  //   map[DbHelper.userBmiScoreColumName]= bmiScore;
-  //   return map;
-  // }
+
 }

@@ -9,15 +9,16 @@ import '../../provider/db_provider.dart';
 class ScoreScreen extends StatefulWidget {
   final int bmiScore;
   String height;
-  //String? date;
+  String? date;
   String weight;
+
   //String? color;
 
   ScoreScreen({
     required this.bmiScore,
     required this.height,
     required this.weight,
-   // required this.date,
+    required this.date,
     //this.color,
   });
 
@@ -115,12 +116,12 @@ class _ScoreScreenState extends State<ScoreScreen> {
               ElevatedButton(
                 onPressed: () async {
                   BmiModel bmiModel = BmiModel(
-                      height: widget.height,
-                      weight: widget.weight,
-                      bmiStatus: bmiStatus,
-                      bmiScore: widget.bmiScore,
-                      // bmiColor: widget.color,
-                      // bmiDate: widget.date,
+                    height: widget.height,
+                    weight: widget.weight,
+                    bmiStatus: bmiStatus,
+                    bmiScore: widget.bmiScore,
+                    // bmiColor: widget.color,
+                    bmiDate: widget.date,
                   );
                   await Provider.of<DbProvider>(context, listen: false)
                       .createNewHistory(bmiModel);

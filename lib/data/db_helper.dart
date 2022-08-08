@@ -34,7 +34,8 @@ class DbHelper {
    $userHeightColumName TEXT,
     $userWeightColumName TEXT,
     $userBmiStatusColumName TEXT,
-    $userBmiScoreColumName INTEGER
+    $userBmiScoreColumName INTEGER,
+    $userBmiDateColumName TEXT
     )
 ''');
     },
